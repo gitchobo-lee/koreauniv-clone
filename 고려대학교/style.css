@@ -1,0 +1,471 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  height: 200vh;
+}
+.notice {
+  height: 119px;
+  background-color: rgb(72, 72, 72);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 30px 25vw 0px;
+}
+
+.n1 {
+  display: grid;
+  grid-template-columns: 81px 1fr;
+  text-decoration: none;
+}
+
+.n1 h1 {
+  color: #e0d6c6;
+  font-size: 17.6px;
+  margin: 0px 0px 5px;
+}
+
+.n1 h3 {
+  color: white;
+  font-size: 0.8em;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.n2 {
+  display: grid;
+  grid-template-columns: 81px 1fr;
+  padding-left: 1vw;
+  text-decoration: none;
+}
+
+.n2 h1 {
+  color: #e0d6c6;
+  font-size: 17.6px;
+  margin: 0px 0px 5px;
+}
+
+.n2 h3 {
+  color: white;
+  font-size: 0.8em;
+  line-height: 1.5;
+  margin-top: 3px;
+}
+.closebox {
+  width: 100vw;
+  background-color: rgb(72, 72, 72);
+  text-align: right;
+  padding-right: 30px;
+  padding-bottom: 5px;
+}
+.closebox button {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0px;
+}
+.closebox label {
+  color: white;
+  font-size: 0.8em;
+}
+
+.navbar1 {
+  background-color: #252525;
+  width: 100%;
+  height: 45px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0px 28px;
+}
+.navbar1 li {
+  font-size: 12.5px;
+  display: inline-block;
+}
+.navbar1 a {
+  color: white;
+  font-size: 12.5px;
+  text-decoration: none;
+  padding: 0px 8px 0px;
+  margin-left: -4px;
+  border-right: 1px solid white;
+}
+
+.navbar1 a[href="https://diversity.korea.ac.kr/diversity/index.do"]
+{
+  border: 0px;
+}
+.lefty {
+  padding-top: 10px;
+  padding-left: 23vw;
+}
+.righty {
+  text-align: right;
+  width: 100%;
+  position: relative;
+  padding-right: 20vw;
+}
+.righty a[ href="https://cn.korea.edu/mbshome/mbs/china/index.do"]
+{
+  border: 0px;
+  margin-right: 0px;
+}
+.searchSection {
+  margin-right: 50px;
+}
+.searchSection input {
+  height: 45px;
+  width: 140px;
+  background-color: #929292;
+  border: 0px;
+  padding-left: 10px;
+}
+.searchSection button {
+  height: 45px;
+  width: 35px;
+  background-color: #929292;
+  border: 0px;
+}
+
+.righty #gSearch {
+  background-color: #252525;
+  border: 0px;
+  height: 45px;
+  position: absolute;
+  right: 20.5vw;
+  top: -00px;
+}
+
+.navbar2 {
+  position: sticky;
+  background-color: white;
+  width: 100%;
+  height: 94px;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  top: 0;
+  z-index: 500;
+}
+
+.navbar2 a {
+  padding-left: 25vw;
+}
+.navbar2 li {
+  display: inline-block;
+  margin-left: 35px;
+}
+.navbar2 li button {
+  border: 0px;
+  background-color: transparent;
+  color: #191919;
+  font-weight: 990;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.navbar3 {
+  background-color: #760023;
+  height: 30px;
+  display: flex;
+}
+.navbar3 li {
+  display: inline-block;
+  font-size: 0.88em;
+  font-weight: 400;
+  color: white;
+  margin-left: 2vw;
+  cursor: pointer;
+}
+
+.navbar3 ul {
+  margin: auto;
+}
+.realmvWrap {
+  position: relative;
+}
+.movieWrap video {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.movieWrap button.play {
+  width: 40px;
+  height: 40px;
+  background-image: url(./images/index-visual-controller.png);
+  background-color: transparent;
+  background-position: 40px -4px;
+  position: absolute;
+  z-index: 40;
+  right: 100px;
+  bottom: 50px;
+  border: 0;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.movieWrap button.pause {
+  width: 40px;
+  height: 40px;
+  background-image: url(./images/index-visual-controller.png);
+  background-color: transparent;
+  background-position: -4px -4px;
+  position: absolute;
+  z-index: 50;
+  right: 100px;
+  bottom: 50px;
+  border: 0;
+  cursor: pointer;
+}
+
+#quickM {
+  position: absolute;
+  right: 0;
+  top: 0px;
+  width: 52px;
+  transition: all 0.2s ease;
+  z-index: 51;
+}
+
+#quickM #topBtn {
+  margin: 0 0;
+  text-indent: -5000px;
+  width: 100%;
+  height: 39px;
+  background: rgba(32, 29, 30, 0.8) url(./images/qTop.png) center no-repeat;
+}
+
+#quickM:hover,
+#quickM:hover > ul {
+  width: 169px;
+}
+
+#quickM:hover #topBtn {
+  background-position: 12px center;
+  font-size: 18px;
+  font-family: noto;
+  text-indent: 65px;
+  text-align: left;
+  color: #fff;
+}
+
+#quickM:hover > ul > li > a {
+  text-indent: 0;
+}
+
+#quickM > ul {
+  width: 52px;
+  font-size: 17px;
+  background-color: #70122b;
+  transition: all 0.2s ease;
+  letter-spacing: -1px;
+  margin-top: 80px;
+  list-style: none;
+}
+
+#quickM > ul > li > a {
+  display: block;
+  color: #fff;
+  padding: 20px 0px 22px 65px;
+  background: url(./images/quickLink_s.png) 15px 18px no-repeat;
+  text-indent: -5000px;
+  text-decoration: none;
+}
+
+#quickM > ul > li > a:hover {
+  background-color: #b58d74;
+}
+
+#quickM > ul > li.q02 > a {
+  background-position: 15px -39px;
+}
+
+#quickM > ul > li.q03 > a {
+  background-position: 15px -99px;
+}
+
+#quickM > ul > li.q04 > a {
+  background-position: 15px -155px;
+}
+
+#quickM > ul > li.q05 > a {
+  background-position: 15px -215px;
+}
+
+#quickM > ul > li.q06 > a {
+  background-position: 15px -333px;
+}
+
+#quickM > ul > li.q07 > a {
+  background-position: 15px -279px;
+}
+
+#quickM > ul > li.q08 > a {
+  background-position: 15px -394px;
+}
+
+#quickM > ul > li.q09 > a {
+  background-position: 15px -451px;
+}
+
+.wuhan {
+  position: static;
+  background-color: #f4f4f4;
+  width: 100%;
+  height: 96px;
+
+  text-align: center;
+}
+
+.wuhan a {
+  display: inline-block;
+  padding: 0px 30px 0px;
+  background-color: #70122b;
+  text-decoration: none;
+  color: white;
+  font-size: 27px;
+}
+
+h2 {
+  color: #191919;
+  background-color: #f4f4f4;
+  font-size: 3.34em;
+  text-align: center;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.kuNewsWrap {
+  background-color: #f4f4f4;
+  width: 100%;
+  height: 130vh;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0px;
+}
+.article {
+  margin-left: 300px;
+  border-top: 5px solid #70122b;
+  width: 791px;
+}
+.textbox {
+  background-color: white;
+  width: 791px;
+  height: 288px;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+.article h1 {
+  font-size: 23.5px;
+  margin-bottom: 30px;
+}
+.article h4 {
+  font-size: 14px;
+  color: grey;
+  font-weight: 700;
+  padding-bottom: 120px;
+}
+.article a {
+  color: #191919;
+  text-decoration: none;
+}
+
+.article2 {
+  margin-left: -100px;
+  border-top: 5px solid #70122b;
+  width: 380px;
+}
+.textbox2 {
+  background-color: white;
+  width: 380px;
+  height: 220px;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+.article2 h1 {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+.article2 h4 {
+  font-size: 14px;
+  color: grey;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+.article2 a {
+  color: #191919;
+  text-decoration: none;
+}
+
+.bottomspace {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: transparent;
+  margin-left: 300px;
+  width: 791px;
+  margin-top: -100px;
+}
+
+.article3 {
+  padding: 30px;
+  width: 380px;
+  height: 254px;
+  border-top: 5px solid #70122b;
+  background-color: white;
+}
+.article3 h1 {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.article3 h4 {
+  font-size: 13px;
+  color: grey;
+  font-weight: 700;
+  padding-bottom: 50px;
+}
+.article3 a {
+  color: #191919;
+  text-decoration: none;
+}
+.article4 {
+  margin-left: 20px;
+}
+
+.article5 {
+  border-top: 5px solid #70122b;
+  width: 380px;
+  margin-left: -100px;
+  margin-top: -425px;
+}
+
+.article5 h1 {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+.article5 h4 {
+  font-size: 14px;
+  color: grey;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+.article5 a {
+  color: #191919;
+  text-decoration: none;
+}
+
+.textbox5 {
+  background-color: white;
+  width: 380px;
+  height: 220px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+}
+.koyon {
+  width: 100%;
+}
