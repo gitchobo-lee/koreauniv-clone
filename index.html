@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <title>고려대학교</title>
+  </head>
+  <body>
+    <div class="notice" id="notice">
+      <a
+        href="https://korea.ac.kr/cop/portalBoard/portalBoardView.do?siteId=university&type=NG&id=university_060201000000&articleId=202211111025480136&page=&startDate=&endDate=&findType=&findWord="
+        class="n1"
+      >
+        <img src="./images/noticelogo.png" class="noticelogo" />
+        <div>
+          <h1>구글 사용자별 용량 제한 및 계정 삭제 안내</h1>
+          <h3>관련 세부사항 더보기(click)</h3>
+        </div>
+      </a>
+      <a href="https://www.kosaf.go.kr/ko/main.do" class="n2">
+        <img src="./images/noticelogo.png" class="noticelogo" />
+        <div>
+          <h1>2023학년도 1학기 국가장학금 1차 신청 안내</h1>
+          <h3>신청기간: 2022.11.24(목)~2022.12.29(목) 18:00</h3>
+          <h3>국가장학금 신청 바로가기:www.kosaf.go.kr</h3>
+        </div>
+      </a>
+    </div>
+    <div class="closebox">
+      <input type="checkbox" value="checkbox" id="today_check" />
+      <label for="today_check">오늘하루 그만보기</label>
+      <button type="button" class="pop_close" onclick="hide()">
+        <img src="./images/popupClose.png" />
+      </button>
+    </div>
+    <div class="navbar1">
+      <div class="lefty">
+        <ul>
+          <li><a href="https://sejong.korea.ac.kr/kr">세종캠퍼스</a></li>
+          <li><a href="http://www.kumc.or.kr/main/index.do">의료원</a></li>
+          <li>
+            <a href="https://portal.korea.ac.kr/front/Intro.kpd">KUPID</a>
+          </li>
+          <li><a href="https://give.korea.ac.kr/front/main.do">발전기금</a></li>
+          <li><a href="https://www.kuaa.or.kr/index.do">교우회</a></li>
+          <li>
+            <a href="https://diversity.korea.ac.kr/diversity/index.do"
+              >다양성위원회</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="righty">
+        <ul>
+          <li>
+            <a
+              href="https://www.korea.ac.kr/mbshome/mbs/university/index.do#groupService"
+              >Group Service</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.korea.ac.kr/cop/member/memberLoginForm.do?siteId=university&id=university_090100000000"
+              >로그인</a
+            >
+          </li>
+          <li>
+            <a href="https://www.korea.edu/mbshome/mbs/en/index.do">ENG</a>
+          </li>
+          <li>
+            <a href="https://cn.korea.edu/mbshome/mbs/china/index.do">中文</a>
+          </li>
+
+          <li class="searchSection">
+            <input
+              type="text"
+              id="searchH"
+              placeholder="검색어를 입력하세요."
+            />
+            <button type="button" id="seacrhGo">go</button>
+          </li>
+
+          <button type="button" id="gSearch" onclick="showSearch()">
+            <img src="./images/gSerchBtn.png" />
+          </button>
+        </ul>
+      </div>
+    </div>
+    <div class="navbar2">
+      <a href="http://127.0.0.1:5500/index.html"
+        ><img src="./images/h1_logo_new.svg"
+      /></a>
+      <ul>
+        <li><button>고대소개</button></li>
+        <li><button>입학안내</button></li>
+        <li><button>대학ㆍ대학원</button></li>
+        <li><button>교육정보</button></li>
+        <li><button>대학생활</button></li>
+        <li><button>연구ㆍ산학</button></li>
+        <li><button>고대소식</button></li>
+      </ul>
+    </div>
+    <div class="navbar3">
+      <ul>
+        <li><p onclick="moveToTdy()">KU Today</p></li>
+        <li><p onclick="moveToRsc()">연구성과</p></li>
+        <li><p onclick="moveToFes()">주요행사</p></li>
+        <li><p onclick="moveToMda()">KU미디어</p></li>
+      </ul>
+    </div>
+    <div class="movieWrap">
+      <div class="realmvWrap">
+        <video
+          id="banner-video00"
+          playsinline
+          muted
+          autoplay
+          loop
+          data-vscid="ttvv0rrbv"
+        >
+          <source src="./images/2022_winter.mp4" />
+        </video>
+        <button class="play" onclick="playToPause()"></button>
+        <button class="pause" onclick="pauseToPlay()"></button>
+      </div>
+    </div>
+    <div id="bodyWrap" class="bodyWrap">
+      <div id="quickM" style="position: absolute; top: 200px">
+        <ul>
+          <li class="q04">
+            <a
+              href="https://www.korea.ac.kr/user/boardList.do?handle=137&siteId=university&id=university_050501000000"
+              >KU 문의함</a
+            >
+          </li>
+          <li class="q01">
+            <a href="https://registrar.korea.ac.kr/eduinfo/affairs/schedule.do"
+              >학사일정</a
+            >
+          </li>
+          <li class="q02">
+            <a
+              href="https://www.korea.ac.kr/mbshome/mbs/university/subview.do?id=university_090200000000"
+              >주요 사이트</a
+            >
+          </li>
+          <li class="q03">
+            <a
+              href="https://www.korea.ac.kr/mbshome/mbs/university/subview.do?id=university_010107000000"
+              >조직도</a
+            >
+          </li>
+          <li class="q05">
+            <a
+              href="https://www.korea.ac.kr/mbshome/mbs/university/subview.do?id=university_010502000000"
+              >오시는길</a
+            >
+          </li>
+          <li class="q06">
+            <a href="https://registrar.korea.ac.kr/eduinfo/index.do"
+              >교육정보</a
+            >
+          </li>
+          <li class="q07">
+            <a
+              href="https://www.korea.ac.kr/mbshome/mbs/university/subview.do?id=university_010504000000"
+              >견학신청</a
+            >
+          </li>
+          <li class="q08">
+            <a
+              href="https://www.korea.ac.kr/mbshome/mbs/university/subview.do?id=university_040700000000"
+              >KU명예의전당</a
+            >
+          </li>
+          <li><button id="topBtn" onclick="moveTop()">TOP</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wuhan">
+      <a href="https://covid19.korea.ac.kr/">코로나19 대응안내</a>
+    </div>
+    <h2>KU Today</h2>
+    <div class="kuNewsWrap">
+      <div class="article">
+        <img src="./images/특훈.jpg" />
+        <div class="textbox">
+          <h1>
+            세계적 수준의 탁월한 교육과 연구 업적 남긴 교원, '특훈 교수'로 우대
+          </h1>
+          <h4>고려대, 특훈 교수 제도 시행하며 독보적 연구자 8인 임명</h4>
+          <a
+            href="https://www.korea.ac.kr/user/boardList.do?boardId=136&siteId=university&page=1&id=university_060101000000&boardSeq=494333&command=albumView"
+            >Read More</a
+          >
+        </div>
+      </div>
+      <div class="article2">
+        <img src="./images/한림.jpg" />
+        <div class="textbox2">
+          <h1>
+            2023년 한국공학한림원 신입<br />
+            회원, 국내 사립대 中 최다 배출
+          </h1>
+          <h4>
+            강용태·김세용·하정숙·성태연·이원준·김중배·심<br />상준 교수 정회원
+            선정돼
+          </h4>
+          <a
+            href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&siteId=university&page=1&id=university_060108000000&boardSeq=494351&command=albumView"
+            >Read More</a
+          >
+        </div>
+      </div>
+      <div class="bottomspace">
+        <div class="article3">
+          <h1>경영전문대학원, 2022 올해의<br />CEMS 비즈니스 프로젝트상</h1>
+          <h4>
+            CEMS 34개 회원교 제출 프로젝트 중 단 하나만 선정,<br />
+            비유럽권 최초
+          </h4>
+          <a
+            href="https://www.korea.ac.kr/user/boardList.do?boardId=135&siteId=university&page=1&id=university_060102000000&boardSeq=494225&command=albumView"
+            >Read More</a
+          >
+        </div>
+        <a
+          href="https://www.korea.ac.kr/kustory/kustoryHome.do?siteId=university&id=university_060109000000"
+          class="article4"
+        >
+          <img src="./images/소식더보기.jpg" />
+        </a>
+      </div>
+      <div class="article5">
+        <img src="./images/국제동계대학.jpg" />
+        <div class="textbox5">
+          <h1>아시아 최대 규모의 국제동계대<br />학 개최</h1>
+          <h4>
+            우수한 해외 교수진에 다양한 문화체험까지 국내 최고의 명성 이어가
+          </h4>
+          <a
+            href="https://www.korea.ac.kr/user/boardList.do?boardId=478051&siteId=university&page=1&id=university_060110000000&boardSeq=494339&command=albumView"
+            >Read More</a
+          >
+        </div>
+      </div>
+    </div>
+    <img class="koyon" src="./images/고연전.jpg" />
+    <h2>연구성과</h2>
+    <div class="backgrounduse">
+      <div class="res1">
+        <img src="./images/연구결과1.jpg" />
+        <div class="textbox6">
+          <h1>초고민감도 분자 카이랄성 측정기술 개발</h1>
+          <h4>박규환-이승우 교수팀, 서울대 연구진과 공동연구 '네이처' 게재</h4>
+          <a
+            href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&siteId=university&page=1&id=university_060108000000&boardSeq=494130&command=albumView"
+          >
+            Read More
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="backgrounduse2">
+      <div>
+        <img src="./images/연구결과2.jpg" />
+        <div class="textbox7">
+          <h1>
+            뇌세포막의 비밀을 풀다: 콜레스테롤 고함량 세포막의 물 분자 불투과
+            관측
+          </h1>
+          <h4>
+            유용상•안동준 교수팀 연구결과 Journal of the American Chemical
+            Society 표지 논문 선정
+          </h4>
+          <a
+            href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&siteId=university&page=1&id=university_060108000000&boardSeq=494028&command=albumView"
+            >Read More</a
+          >
+        </div>
+      </div>
+      <div>
+        <img src="./images/연구결과3.jpg" alt="" />
+        <div class="textbox7">
+          <h1>
+            파킨슨병 주원인 물질‘ 알파시뉴클레인 올리고머’ 선택적 분해 가능해져
+          </h1>
+          <h4>
+            윤대성 교수팀 연구결과, ACS Applied Materials & Interfaces
+            속표지논문 선정
+          </h4>
+          <a
+            href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&page=1&siteId=university&id=university_060108000000&boardSeq=494307&parent=&command=albumView"
+            >Read More</a
+          >
+        </div>
+      </div>
+      <div>
+        <div class="listbox">
+          <ul>
+            <a
+              href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&siteId=university&id=university_060108000000"
+            >
+              <li class="header">연구성과 더 보기</li>
+            </a>
+            <li>
+              <p class="title">2023년 한국공학한림원 신입회원, 국내 사립대</p>
+              <p class="boardDate">2022-12-28</p>
+              <a
+                href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&command=albumView&page=1&boardSeq=494351&id=university_060108000000"
+                >Read More ></a
+              >
+            </li>
+            <li>
+              <p class="title">'헬스케어 바이어센서'에 대한 최근 전세계 연구</p>
+              <p class="boardDate">2022-12-27</p>
+              <a
+                href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&command=albumView&page=1&boardSeq=494327&id=university_060108000000"
+                >Read More ></a
+              >
+            </li>
+            <li>
+              <p class="title">파킨슨병 주원인 물질'알파시뉴클레인 올리고머'</p>
+              <p class="boardDate">2022-12-26</p>
+              <a
+                href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&command=albumView&page=1&boardSeq=494307&id=university_060108000000"
+                >Read More ></a
+              >
+            </li>
+            <li>
+              <p class="title">초고민감도 분자 카이랄성 측정기술 개발</p>
+              <p class="boardDate">2022-12-20</p>
+              <a
+                href="https://www.korea.ac.kr/user/boardList.do?boardId=474633&command=albumView&page=1&boardSeq=494283&id=university_060108000000"
+                >Read More ></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <h2 style="background-color: #ececec">주요행사</h2>
+    <div class="backgrounduse3">
+      <div>
+        <img src="./images/주요행사 1.jpg" />
+        <div class="textbox8">
+          <a
+            href="https://www.korea.ac.kr/user/boardList.do?boardId=262&siteId=university&page=1&id=university_060104000000&boardSeq=494345&command=albumView"
+            >2022년 마무리를 풍성히 채워주는 아름다운 선율의 향연</a
+          >
+          <h4>60회 맞은 크림슨마스터즈 콘서트 현장</h4>
+        </div>
+      </div>
+      <div>
+        <img src="./images/주요행사2.jpg" />
+        <div class="textbox8">
+          <a
+            href="https://www.korea.ac.kr/user/boardList.do?boardId=262&siteId=university&page=1&id=university_060104000000&boardSeq=494301&command=albumView"
+            >"대한민국의 미래를 위해서는 기술개발과 발전이 중요해"</a
+          >
+          <h4>
+            최석탁(주)티에이케이 대표이사 회장, 전기전자공학부 장학금 2억 쾌척
+          </h4>
+        </div>
+      </div>
+      <div>
+        <div class="listbox2">
+          <ul>
+            <a
+              href="https://www.korea.ac.kr/user/boardList.do?boardId=134&siteId=university&id=university_060103000000"
+            >
+              <li class="header">주요행사 더 보기</li>
+            </a>
+            <li>
+              <p class="title">KOICA 석사과정 학위수여식 개최</p>
+              <p class="boardDate">2022-12-29</p>
+              <a
+                href="https://www.korea.ac.kr/user/boardList.do?boardId=134&command=albumView&page=1&boardSeq=494375&id=university_060103000000"
+                >Read More ></a
+              >
+            </li>
+            <li>
+              <p class="title">고려대·강원도 고성군 교육봉사 협약(MOU) 체결</p>
+              <p class="boardDate">2022-12-20</p>
+              <a
+                href="https://www.korea.ac.kr/user/boardList.do?boardId=134&command=albumView&page=1&boardSeq=494194&id=university_060103000000"
+                >Read More ></a
+              >
+            </li>
+            <li>
+              <p class="title">
+                학생창업기업 R2C 컴퍼니, 2022 산학협력 EXPO 대상
+              </p>
+              <p class="boardDate">2022-12-08</p>
+              <a
+                href="https://www.korea.ac.kr/user/boardList.do?boardId=134&command=albumView&page=1&boardSeq=494121&id=university_060103000000"
+                >Read More ></a
+              >
+            </li>
+            <li>
+              <p class="title">'COP27 성과와 향후전망' 국제세미나 개최</p>
+              <p class="boardDate">2022-11-25</p>
+              <a
+                href="https://www.korea.ac.kr/user/boardList.do?boardId=134&command=albumView&page=1&boardSeq=494121&id=university_060103000000"
+                >Read More ></a
+              >
+            </li>
+            <li>
+              <p class="title">국제대학 승격기념 국제학술세미나 성료</p>
+              <p class="boardDate">2022-11-16</p>
+              <a
+                href="https://www.korea.ac.kr/user/boardList.do?boardId=134&command=albumView&page=1&boardSeq=494017&id=university_060103000000"
+                >Read More ></a
+              >
+            </li>
+            <li>
+              <p class="title">오정리질리언스연구원 아시아리질리언스센터, AR</p>
+              <p class="boardDate">2022-11-10</p>
+              <a
+                href="https://www.korea.ac.kr/user/boardList.do?boardId=134&command=albumView&page=1&boardSeq=493956&id=university_060103000000"
+                >Read More ></a
+              >
+            </li>
+            <li>
+              <p class="title">
+                고려대 소장 문화예술품, 현대적 해석담아 새로운
+              </p>
+              <p class="boardDate">2022-11-01</p>
+              <a
+                href="https://www.korea.ac.kr/user/boardList.do?boardId=134&command=albumView&page=1&boardSeq=493867&id=university_060103000000"
+                >Read More ></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <h2 style="background-color: #f4f4f4">KU미디어</h2>
+    <div class="img1">
+      <a
+        href="https://www.facebook.com/photo/?fbid=534976555337713&set=pcb.534976998671002"
+      >
+        <img src="./images/미디어1.jpg" />
+        <div>
+          <p class="ttl">Facebook</p>
+          <p class="grey">Goodbye, 2022 고려대!</p>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/p/Cl0U0VEyr19/">
+        <img src="./images/미디어2.jpg" />
+        <div>
+          <p class="ttl">Instagram</p>
+          <p class="grey">겨울을 맞이한 캠퍼스</p>
+        </div>
+      </a>
+      <a
+        href="https://www.instagram.com/p/Cl2Vh03v0ky/?utm_source=ig_web_copy_link"
+      >
+        <img src="./images/미디어3.jpg" />
+        <div>
+          <p class="ttl">Instagram</p>
+          <p class="grey">고려대학교 상호존중의 날 KU-RESPECT Day 캠페인</p>
+        </div>
+      </a>
+    </div>
+    <div class="img2">
+      <a href="https://tour.korea.ac.kr/tour/community/lan-tour.do">
+        <img src="./images/미디어4.jpg" />
+      </a>
+      <a href="https://www.youtube.com/watch?v=NpW0iz52lVs">
+        <img src="./images/미디어5.jpg" />
+      </a>
+    </div>
+    <div class="navbar4">
+      <ul>
+        <li>
+          <a
+            href="https://www.academyinfo.go.kr/popup/pubinfo1690/list.do?schlId=0000069"
+            >대학정보공시</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.korea.ac.kr/mbshome/mbs/university/subview.do?id=university_070100000000"
+            >정보공개</a
+          >
+        </li>
+        <li>
+          <b
+            href="https://www.korea.ac.kr/mbshome/mbs/university/subview.do?id=university_090300000000"
+            >개인정보처리방침</b
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.korea.ac.kr/mbshome/mbs/university/subview.do?id=university_130000000000"
+            >KU옴부즈</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.korea.ac.kr/mbshome/mbs/university/subview.do?id=university_090701000000"
+            >캠퍼스안전</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.korea.ac.kr/mbshome/mbs/university/subview.do?id=university_090600000000"
+            >교내주요연락처</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.korea.ac.kr/mbshome/mbs/university/subview.do?id=university_090200000000"
+            >교내주요사이트</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.korea.ac.kr/mbshome/mbs/university/subview.do?id=university_090500000000"
+            >사이트맵</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.youtube.com/playlist?list=PLZLaVzHO7gXpG_EU5yxKdu0_na9cBSdoM"
+            >COVID19</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div id="footerWrap">
+      <div class="footerArea">
+        <ul>
+          <li class="first">
+            <dl>
+              <dt>입학안내</dt>
+              <dd>
+                <a
+                  href="/mbshome/mbs/university/subview.do?id=university_020100000000"
+                  onclick="ga('send','event','footer','click','학부');"
+                  >학부</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="/mbshome/mbs/university/subview.do?id=university_020200000000"
+                  onclick="ga('send','event','footer','click','대학원');"
+                  >대학원</a
+                >
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>교환학생</dt>
+              <dd>
+                <a
+                  target="_blank"
+                  title="새창 열기"
+                  href="http://registrar.korea.ac.kr/eduinfo/program/internal_out.do"
+                  onclick="ga('send','event','footer','click','국내대학 학점교류(OUT)');"
+                  >국내대학 학점교류(OUT)</a
+                >
+              </dd>
+              <dd>
+                <a
+                  target="_blank"
+                  title="새창 열기"
+                  href="http://registrar.korea.ac.kr/eduinfo/program/internal_in.do"
+                  onclick="ga('send','event','footer','click','국내대학 학점교류(IN)');"
+                  >국내대학 학점교류(IN)</a
+                >
+              </dd>
+              <dd>
+                <a
+                  target="_blank"
+                  title="새창 열기"
+                  href="http://registrar.korea.ac.kr/eduinfo/program/exchange.do"
+                  onclick="ga('send','event','footer','click','국제교환학생');"
+                  >국제교환학생</a
+                >
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>교육지원</dt>
+              <dd>
+                <a
+                  target="_blank"
+                  title="새창 열기"
+                  href="http://registrar.korea.ac.kr/eduinfo/program/language.do"
+                  onclick="ga('send','event','footer','click','어학교육');"
+                  >어학교육</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="/mbshome/mbs/university/subview.do?id=university_050203010000"
+                  onclick="ga('send','event','footer','click','One-Stop 서비스센터');"
+                  >One-Stop 서비스센터</a
+                >
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>견학</dt>
+              <dd>
+                <a
+                  href="/mbshome/mbs/university/subview.do?id=university_010504000000"
+                  onclick="ga('send','event','footer','click','캠퍼스투어');"
+                  >캠퍼스투어</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="/mbshome/mbs/university/subview.do?id=university_010502000000"
+                  onclick="ga('send','event','footer','click','찾아오시는 길');"
+                  >찾아오시는 길</a
+                >
+              </dd>
+            </dl>
+          </li>
+          <li class="dlR">
+            <dl>
+              <dt>시설안내</dt>
+              <dd>
+                <a
+                  href="/mbshome/mbs/university/subview.do?id=university_050410000000"
+                  onclick="ga('send','event','footer','click','도서관');"
+                  >도서관</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="/mbshome/mbs/university/subview.do?id=university_050411000000"
+                  onclick="ga('send','event','footer','click','박물관');"
+                  >박물관</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="/user/restaurantMenuAllList.do?siteId=university&amp;id=university_050402000000"
+                  onclick="ga('send','event','footer','click','학생식당');"
+                  >학생식당</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="/cop/convenience/convenienceFrontList.do?siteId=university&amp;functionId=16783&amp;id=university_050401000000"
+                  onclick="ga('send','event','footer','click','편의시설');"
+                  >편의시설</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="/mbshome/mbs/university/subview.do?id=university_050405000000"
+                  onclick="ga('send','event','footer','click','체육시설');"
+                  >체육시설</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="/mbshome/mbs/university/subview.do?id=university_050406000000"
+                  onclick="ga('send','event','footer','click','문화시설');"
+                  >문화시설</a
+                >
+              </dd>
+            </dl>
+          </li>
+          <li class="mobileH">
+            <dl>
+              <dt>대학∙대학원</dt>
+              <dd>
+                <a
+                  href="http://www.korea.ac.kr/mbshome/mbs/university/subview.do?id=university_030101000000"
+                  onclick="ga('send','event','footer','click','서울캠퍼스');"
+                  >서울캠퍼스</a
+                >
+              </dd>
+              <dd>
+                <a
+                  target="_blank"
+                  title="새창 열기"
+                  href="http://sejong.korea.ac.kr/academics/overview"
+                  onclick="ga('send','event','footer','click','세종캠퍼스');"
+                  >세종캠퍼스</a
+                >
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>대학홍보</dt>
+              <dd>
+                <a
+                  href="/mbshome/mbs/university/subview.do?id=university_010410010000"
+                  onclick="ga('send','event','footer','click','로고 및 UI');"
+                  >로고 및 UI</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="/mbshome/mbs/university/subview.do?id=university_010702000000"
+                  onclick="ga('send','event','footer','click','홍보영화');"
+                  >홍보영화</a
+                >
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>학생활동</dt>
+              <dd>
+                <a
+                  href="/mbshome/mbs/university/subview.do?id=university_050305010000"
+                  onclick="ga('send','event','footer','click','사회봉사단');"
+                  >사회봉사단</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="/mbshome/mbs/university/subview.do?id=university_050306000000"
+                  onclick="ga('send','event','footer','click','학생회');"
+                  >학생회</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="/mbshome/mbs/university/subview.do?id=university_050307000000"
+                  onclick="ga('send','event','footer','click','동아리');"
+                  >동아리</a
+                >
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>학교소개</dt>
+              <dd>
+                <a
+                  href="/mbshome/mbs/university/subview.do?id=university_010106000000"
+                  onclick="ga('send','event','footer','click','현황');"
+                  >현황</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="/cop/rule/ruleFrontList.do?siteId=university&amp;id=university_010108000000"
+                  onclick="ga('send','event','footer','click','학교규칙');"
+                  >학교규칙</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="/mbshome/mbs/university/subview.do?id=university_010109000000"
+                  onclick="ga('send','event','footer','click','국내·외 평가');"
+                  >국내·외 평가</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="/mbshome/mbs/university/subview.do?id=university_010303000000"
+                  onclick="ga('send','event','footer','click','교육목표');"
+                  >교육목표</a
+                >
+              </dd>
+              <dd>
+                <a
+                  href="/mbshome/mbs/university/subview.do?id=university_010601000000"
+                  onclick="ga('send','event','footer','click','개교의 의의와 고대정신');"
+                  >개교의 의의와 고대정신</a
+                >
+              </dd>
+            </dl>
+          </li>
+          <li class="dlR">
+            <dl>
+              <dt>발전기금</dt>
+              <dd class="fundIcon">
+                <a
+                  href="http://give.korea.ac.kr/main.do"
+                  target="_blank"
+                  title="새창 열기"
+                  onclick="ga('send','event','footer','click','기부하기');"
+                  >기부하기</a
+                >
+              </dd>
+            </dl>
+          </li>
+        </ul>
+        <div class="footerLogo">
+          <h1><a href="/mbshome/mbs/university/">고려대학교</a></h1>
+          <address>
+            02841 서울특별시 성북구 안암로 145
+            <p>
+              TEL.02.3290.1114.<br />
+              webmaster@korea.ac.kr
+            </p>
+          </address>
+          <ul>
+            <li class="blog first">
+              <a
+                href="http://blog.naver.com/ku_1905"
+                target="_blank"
+                title="새창 열기"
+                onclick="ga('send','event','footer','click','blog');"
+                >blog</a
+              >
+            </li>
+            <li class="facebook">
+              <a
+                href="https://www.facebook.com/ku1905"
+                target="_blank"
+                title="새창 열기"
+                onclick="ga('send','event','footer','click','facebook');"
+                >facebook</a
+              >
+            </li>
+            <li class="instagram">
+              <a
+                href="https://www.instagram.com/koreauniv.official/"
+                target="_blank"
+                title="새창 열기"
+                onclick="ga('send','event','footer','click','instagram');"
+                >instagram</a
+              >
+            </li>
+            <li class="youtube last">
+              <a
+                href="https://www.youtube.com/c/고려대학교1905/"
+                target="_blank"
+                title="새창 열기"
+                onclick="ga('send','event','footer','click','youtube');"
+                >youtube</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        Copyright (C)2017 Korea University. All Rights Reserved
+      </div>
+    </div>
+  </body>
+</html>

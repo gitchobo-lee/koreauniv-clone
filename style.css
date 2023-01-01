@@ -68,6 +68,7 @@ body {
   cursor: pointer;
   border: 0px;
 }
+
 .closebox label {
   color: white;
   font-size: 0.8em;
@@ -108,14 +109,18 @@ body {
   position: relative;
   padding-right: 20vw;
 }
+
+.righty ul li {
+  height: 45px;
+  padding-top: 10px;
+}
+
 .righty a[ href="https://cn.korea.edu/mbshome/mbs/china/index.do"]
 {
   border: 0px;
   margin-right: 0px;
 }
-.searchSection {
-  margin-right: 50px;
-}
+
 .searchSection input {
   height: 45px;
   width: 140px;
@@ -135,8 +140,9 @@ body {
   border: 0px;
   height: 45px;
   position: absolute;
-  right: 20.5vw;
+  right: 17.5vw;
   top: -00px;
+  cursor: pointer;
 }
 
 .navbar2 {
@@ -222,10 +228,20 @@ body {
   cursor: pointer;
 }
 
+.bodyWrap {
+  position: fixed;
+  bottom: 60%;
+  right: 0rem;
+  width: 52px;
+  height: 400px;
+  background: transparent;
+  color: #fff;
+}
+
 #quickM {
   position: absolute;
   right: 0;
-  top: 0px;
+  top: 0;
   width: 52px;
   transition: all 0.2s ease;
   z-index: 51;
@@ -237,6 +253,7 @@ body {
   width: 100%;
   height: 39px;
   background: rgba(32, 29, 30, 0.8) url(./images/qTop.png) center no-repeat;
+  cursor: pointer;
 }
 
 #quickM:hover,
@@ -468,4 +485,383 @@ h2 {
 }
 .koyon {
   width: 100%;
+}
+
+.backgrounduse {
+  background-color: #f4f4f4;
+}
+
+.res1 {
+  display: grid;
+  grid-template-columns: 786px 408px;
+  margin-left: 300px;
+}
+
+.res1 div {
+  width: 408px;
+  height: 371px;
+  background-color: white;
+  padding: 30px 40px;
+}
+.res1 div h1 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.res1 div h4 {
+  font-size: 17px;
+  color: grey;
+  font-weight: 400;
+  margin-bottom: 150px;
+}
+.res1 div a {
+  text-decoration: none;
+  color: black;
+}
+
+.backgrounduse2 {
+  background-color: #f4f4f4;
+  padding-top: 40px;
+  padding-left: 300px;
+  padding-bottom: 50px;
+  display: grid;
+  grid-template-columns: 371px 371px 371px;
+  gap: 40px;
+}
+
+.textbox7 {
+  background-color: white;
+  padding: 25px;
+}
+.textbox7 h1 {
+  font-size: 20.1px;
+  color: black;
+  margin-bottom: 12px;
+}
+
+.textbox7 h4 {
+  font-size: 15px;
+  color: black;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+.textbox7 a {
+  text-decoration: none;
+  color: black;
+}
+
+.listbox {
+  width: 371px;
+  height: 409px;
+  background-color: white;
+}
+
+.header {
+  display: flex;
+  background: #760023 url("./images/moreBtn2.png") 90% center no-repeat;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 990;
+  text-align: left;
+  align-items: center;
+}
+.listbox ul li {
+  list-style: none;
+  height: 80px;
+  padding: 17px 22px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.listbox .title {
+  font-size: 15px;
+  font-weight: 990;
+}
+
+.listbox .boardDate {
+  font-size: 12px;
+  float: left;
+  margin-right: 20px;
+  margin-top: 4px;
+}
+.listbox a {
+  font-size: 12px;
+  color: #70122b;
+  text-decoration: none;
+}
+
+.backgrounduse3 {
+  background-color: #ececec;
+  padding-top: 40px;
+  padding-left: 300px;
+  padding-bottom: 100px;
+  display: grid;
+  grid-template-columns: 371px 371px 371px;
+  gap: 40px;
+}
+
+.textbox8 {
+  background-color: white;
+  padding: 25px;
+  width: 380px;
+  height: 220px;
+  margin-top: -3px;
+  border-bottom: 5px #70122b solid;
+}
+
+.textbox8 h4 {
+  margin-top: 30px;
+  font-size: 15px;
+  color: black;
+
+  font-weight: 400;
+}
+.textbox8 a {
+  text-decoration: none;
+  font-weight: 990;
+  font-size: 20px;
+
+  color: #191919;
+}
+
+.listbox2 {
+  width: 371px;
+  height: 640px;
+  background-color: white;
+}
+
+.header {
+  display: flex;
+  background: #760023 url("./images/moreBtn2.png") 90% center no-repeat;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 990;
+  text-align: left;
+  align-items: center;
+}
+.listbox2 ul li {
+  list-style: none;
+  height: 80px;
+  padding: 17px 22px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.listbox2 .title {
+  font-size: 14px;
+  font-weight: 990;
+}
+
+.listbox2 .boardDate {
+  font-size: 12px;
+  float: left;
+  margin-right: 20px;
+  margin-top: 4px;
+}
+.listbox2 a {
+  font-size: 12px;
+  color: #70122b;
+  text-decoration: none;
+}
+
+.img1 {
+  display: grid;
+  grid-template-columns: 370px 370px 370px;
+  gap: 40px;
+  background-color: #f4f4f4;
+  padding-left: 300px;
+  padding-bottom: 40px;
+}
+
+.img1 img {
+  width: 100%;
+}
+
+.img1 a {
+  width: 370px;
+  margin-top: -5px;
+  text-decoration: none;
+}
+
+.img1 a div {
+  background-color: white;
+  width: 370px;
+  height: 84.11px;
+  text-align: center;
+  padding: 19px 0px;
+}
+
+.ttl {
+  text-decoration: none;
+  color: black;
+}
+.grey {
+  text-decoration: none;
+  color: grey;
+  font-size: 14px;
+}
+
+.img2 {
+  display: grid;
+  grid-template-columns: 570px 570px;
+  gap: 50px;
+  background-color: #f4f4f4;
+  padding-left: 300px;
+  padding-bottom: 150px;
+}
+
+.navbar4 {
+  position: flex;
+  align-items: center;
+  text-align: center;
+  background-color: #760023;
+  padding: 11px 0 10px;
+  height: 46px;
+
+  width: 100%;
+  align-items: center;
+  top: 0;
+  z-index: 500;
+}
+.navbar4 b {
+  text-decoration: none;
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 990;
+}
+.navbar4 a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #ffffff94;
+  font-weight: 400;
+}
+
+.navbar4 li {
+  display: inline-block;
+  margin-left: 35px;
+}
+.navbar4 li button {
+  border: 0px;
+  background-color: transparent;
+  color: #191919;
+  font-weight: 990;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+footer {
+  width: 100%;
+  height: 60vh;
+  background-color: #282828;
+  font-size: 15px;
+}
+
+.footerArea {
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 62px 0 10px;
+  color: #b9b9b9;
+  border-bottom: 2px rgb(170, 168, 168) solid;
+}
+
+.footerArea .footerLogo {
+  color: #b9b9b9;
+  text-align: center;
+  float: left;
+  width: 18%;
+  font-size: 14px;
+}
+
+.footerArea .footerLogo h1 {
+  width: 87px;
+  height: 115px;
+  margin: 0 auto 25px;
+  text-indent: -5000px;
+  background: url("./images/footerLogo.png") center top no-repeat;
+}
+
+.footerArea .footerLogo address {
+  line-height: 1.7;
+}
+
+.footerArea .footerLogo > ul {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.footerArea .footerLogo > ul > li {
+  display: inline-block;
+}
+
+.footerArea .footerLogo > ul > li > a {
+  display: block;
+  width: 25px;
+  height: 24px;
+  background: url("./images/footerSns.png") left top no-repeat;
+  text-indent: -5000px;
+  margin: 0 10px;
+}
+
+.footerArea .footerLogo > ul > li.facebook > a {
+  background-position: -48px top;
+}
+
+.footerArea .footerLogo > ul > li.instagram > a {
+  background-position: -94px top;
+}
+
+.footerArea .footerLogo > ul > li.youtube > a {
+  background-position: -145px top;
+}
+
+.footerArea > ul {
+  overflow: hidden;
+  float: right;
+  width: 74%;
+}
+
+.footerArea > ul > li {
+  list-style: none;
+  float: left;
+  width: 22%;
+  margin-bottom: 20px;
+}
+
+.footerArea > ul > li.dlR {
+  width: auto;
+}
+
+.footerArea > ul > li > dl > dt {
+  color: #f9f9f9;
+  font-size: 1.07em;
+  margin-bottom: 12px;
+}
+
+.footerArea > ul > li > dl > dd {
+  margin-bottom: 6px;
+}
+
+.footerArea > ul > li > dl > dd.fundIcon > a {
+  background: url("/mbshome/mbs/university/images/main3/uServiceIcon03.png")
+    right 1px no-repeat;
+  padding-right: 25px;
+}
+
+.footerArea > ul > li > dl > dd > a {
+  text-decoration: none;
+  color: #b9b9b9;
+}
+
+.footerArea > ul > li > dl > dd > a:hover {
+  color: #f9f9f9;
+}
+
+#footerWrap {
+  background-color: #282828;
+}
+
+.copyright {
+  height: 100px;
+  color: #b9b9b9;
+  margin-top: 20px;
+  margin-left: 327px;
+  margin-bottom: 50px;
 }
